@@ -1,109 +1,137 @@
-import styled from "styled-components"
+import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 import gif from "../imgs/medir-com-barbante.gif";
 
-export default function Calibragem () {
+export default function Calibragem() {
+  return (
+    <Container>
+      <ImgGif>
+        <img src={gif} alt="instrucao" />
+      </ImgGif>
 
-    return (
-        <Container>
+      <Instrucoes>
+        <h2>Instrução:</h2>
+        <h3> 1 - Enrole um fio em seu dedo.</h3>
+        <h3> 2 - Marque o ponto onde se encontraram.</h3>
+        <h3>3 - Com uma régua, meça a distância entre as marcações.</h3>
+      </Instrucoes>
 
-            <ImgGif>
-                <img src={gif} alt="instrucao"/>
-            </ImgGif>
-            
-            <Instrucoes>
-                <h2>Instrução:</h2>
-                <h3> 1 - Enrole um fio em seu dedo (apenas uma volta).</h3>
-                <h3> 2 - Marque no fio o ponto onde se encontraram.</h3>
-                <h3> 3 - Estenda o fio sobre uma régua e anote o valor do comprimento entre os dois pontos.</h3>
-            </Instrucoes>
-
-            <Botoes>
-                <Link to={"/MedicaoSemAnel"}>
-                    <button>Pronto, tenho a medida!</button>
-                </Link>
-                <Link to={"/"}>
-                    <Voltar>Voltar</Voltar>
-                </Link> 
-            </Botoes>
-            
-            
-            
-        </Container>
-    )
+      <Botoes>
+        <Link to={"/MedicaoSemAnel"}>
+          <button>Próximo passo</button>
+        </Link>
+        <Link to={"/"}>
+          <Voltar>Voltar</Voltar>
+        </Link>
+      </Botoes>
+    </Container>
+  );
 }
 const Container = styled.div`
-    width: 100vw;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  position: fixed;
+  top: 2.5vh;
+  left: 5vw;
+  width: 90vw;
+  height: 95vh;
+
+  @media (min-width: 1300px) {
+    flex-direction: initial;
+    justify-content: center;
+  }
+
+  div {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding-top: 2vh;
+    justify-content: center;
+  }
 
-    div {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
+  h2 {
+    font-weight: bold;
+    line-height: 40px;
+    font-size: 20px;
 
-    h2 {
-        font-weight: bold;
-        line-height: 40px;
-        font-size: 20px;
+    @media (min-width: 1300px) {
+      font-size: 70px;
+      line-height: 150px;
     }
+  }
 
-    h3 {
-        line-height: 22px;
-        font-size: 16px;
+  h3 {
+    line-height: 22px;
+    font-size: 16px;
+
+    @media (min-width: 1300px) {
+      font-size: 40px;
+      line-height: 60px;
     }
-`
+  }
+`;
 
 const ImgGif = styled.div`
-    width: 80vw;
-    height: auto;
-    margin: 3vh 0;
-    
-    img {
-        border-radius: 10px;
-        max-height: 100%;
-        max-width: 100%;
+  width: 80vw;
+  height: auto;
+  margin: 3vh 0;
+
+  img {
+    border-radius: 10px;
+    max-height: 100%;
+    max-width: 100%;
+    max-width: 500px;
+
+    @media (min-width: 1300px) {
+      max-width: 600px;
+      margin: 5% 0 20% 12%;
     }
-`
+  }
+`;
 
 const Botoes = styled.div`
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        position: fixed;
-        bottom: 5vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: fixed;
+  bottom: 2vh;
 
-        button {
-        width: 60vw;
-        height: auto;
-        margin: 20px;
-        padding: 20px;
-        background-color: #A3612F;
-        color: #FFFFFF;
-        font-size: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
-    }
-`
-
-const Voltar = styled.div`
+  button {
+    width: 80vw;
+    height: auto;
+    margin: 20px;
+    padding: 20px;
+    background-color: rgba(114, 115, 118);
+    color: #ffffff;
+    border-radius: 10px;
+    font-size: 18px;
     display: flex;
     align-items: center;
-    color: #A3612F;
+    justify-content: center;
+    border: none;
+
     cursor: pointer;
-    font-size: 20px;
-`
+  }
+`;
+
+const Voltar = styled.div`
+  display: flex;
+  align-items: center;
+  color: rgba(114, 115, 118, 0.9);
+  cursor: pointer;
+  font-size: 18px;
+  margin-bottom: 3vh;
+`;
 
 const Instrucoes = styled.div`
-    width: 80vw;
-    text-align: left;
-`
+  width: 80vw;
+  text-align: left;
+  color: rgba(114, 115, 118);
+
+  @media (min-width: 1300px) {
+    margin: 5% 5% 20% 0;
+  }
+`;

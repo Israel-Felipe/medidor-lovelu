@@ -1,200 +1,247 @@
-import { useEffect, useState } from "react"
-import styled from "styled-components"
+import { useEffect, useState } from "react";
+import styled from "styled-components";
 import { Link } from "react-router-dom";
 
 export default function Home() {
-    
-    const [tamAnel, setTamAnel] = useState(5);
-    
-    const [aro, setAro] = useState(10)
+  const [tamAnel, setTamAnel] = useState(5);
 
-    useEffect(() => {
-        if (tamAnel < 5.10) {
-            setAro("Aro: 10")
-        } else if (tamAnel < 5.20) {
-            setAro("Aro: 11")
-        } else if (tamAnel < 5.30) {
-            setAro("Aro: 12")
-        } else if (tamAnel < 5.40) {
-            setAro("Aro: 13")
-        } else if (tamAnel < 5.50) {
-            setAro("Aro: 14")
-        } else if (tamAnel < 5.60) {
-            setAro("Aro: 15")
-        } else if (tamAnel < 5.70) {
-            setAro("Aro: 16")
-        } else if (tamAnel < 5.80) {
-            setAro("Aro: 17")
-        } else if (tamAnel < 5.90) {
-            setAro("Aro: 18")
-        } else if (tamAnel < 6.00) {
-            setAro("Aro: 19")
-        } else if (tamAnel < 6.10) {
-            setAro("Aro: 20")
-        } else if (tamAnel < 6.20) {
-            setAro("Aro: 21")
-        } else if (tamAnel < 6.30) {
-            setAro("Aro: 22")
-        } else if (tamAnel < 6.40) {
-            setAro("Aro: 23")
-        } else if (tamAnel < 6.50) {
-            setAro("Aro: 24")
-        } else if (tamAnel < 6.60) {
-            setAro("Aro: 25")
-        } else if (tamAnel < 6.70) {
-            setAro("Aro: 26")
-        } else if (tamAnel < 6.80) {
-            setAro("Aro: 27")
-        } else if (tamAnel < 6.90) {
-            setAro("Aro: 28")
-        } else if (tamAnel < 7.00) {
-            setAro("Aro: 29")
-        } else if (tamAnel < 7.10) {
-            setAro("Aro: 30")
-        } else if (tamAnel < 7.20) {
-            setAro("Aro: 31")
-        } else if (tamAnel < 7.30) {
-            setAro("Aro: 32")
-        } else if (tamAnel < 7.40) {
-            setAro("Aro: 33")
-        } else if (tamAnel < 7.50) {
-            setAro("Aro: 34")
-        } else {
-            setAro("Aro: 35")
-        }
-    }, [tamAnel])
-    
-    return (
-        <Container>
-            
-            
-            <Instrucoes>
-                <h2>Instrução:</h2>
-                <h3> Arraste a bolinha até que indique a medida exata da circuferência do seu dedo, conforme você mediu seguindo as orientações da tela anterior. </h3>
-            </Instrucoes>
-            
-            <h2>{tamAnel} cm</h2>
-            <input type="range" name="tamanho" min="5" max="7.5" step="0.1" value={tamAnel} onChange={e => setTamAnel(e.target.value)} />
+  const [aro, setAro] = useState(10);
 
-            <Footer>
-                <h1>{aro}</h1>
-                
-                
-                <a href="https://www.lalunapratas.com.br/aneis" target="_blank" rel="noreferrer">
-                    <button>Ir para o site</button>
-                </a>
-                <Link to={"/InstrucaoSemAnel"}>
-                    <Voltar>Voltar</Voltar>
-                </Link>
-            </Footer>
+  useEffect(() => {
+    if (tamAnel < 5.1) {
+      setAro("Seu aro é: 10");
+    } else if (tamAnel < 5.2) {
+      setAro("Seu aro é: 11");
+    } else if (tamAnel < 5.3) {
+      setAro("Seu aro é: 12");
+    } else if (tamAnel < 5.4) {
+      setAro("Seu aro é: 13");
+    } else if (tamAnel < 5.5) {
+      setAro("Seu aro é: 14");
+    } else if (tamAnel < 5.6) {
+      setAro("Seu aro é: 15");
+    } else if (tamAnel < 5.7) {
+      setAro("Seu aro é: 16");
+    } else if (tamAnel < 5.8) {
+      setAro("Seu aro é: 17");
+    } else if (tamAnel < 5.9) {
+      setAro("Seu aro é: 18");
+    } else if (tamAnel < 6.0) {
+      setAro("Seu aro é: 19");
+    } else if (tamAnel < 6.1) {
+      setAro("Seu aro é: 20");
+    } else if (tamAnel < 6.2) {
+      setAro("Seu aro é: 21");
+    } else if (tamAnel < 6.3) {
+      setAro("Seu aro é: 22");
+    } else if (tamAnel < 6.4) {
+      setAro("Seu aro é: 23");
+    } else if (tamAnel < 6.5) {
+      setAro("Seu aro é: 24");
+    } else if (tamAnel < 6.6) {
+      setAro("Seu aro é: 25");
+    } else if (tamAnel < 6.7) {
+      setAro("Seu aro é: 26");
+    } else if (tamAnel < 6.8) {
+      setAro("Seu aro é: 27");
+    } else if (tamAnel < 6.9) {
+      setAro("Seu aro é: 28");
+    } else if (tamAnel < 7.0) {
+      setAro("Seu aro é: 29");
+    } else if (tamAnel < 7.1) {
+      setAro("Seu aro é: 30");
+    } else if (tamAnel < 7.2) {
+      setAro("Seu aro é: 31");
+    } else if (tamAnel < 7.3) {
+      setAro("Seu aro é: 32");
+    } else if (tamAnel < 7.4) {
+      setAro("Seu aro é: 33");
+    } else if (tamAnel < 7.5) {
+      setAro("Seu aro é: 34");
+    } else {
+      setAro("Seu aro é: 35");
+    }
+  }, [tamAnel]);
 
-        </Container>
-    )
+  return (
+    <Container>
+      <Instrucoes>
+        <h2>Agora é fácil...</h2>
+        <h3>
+          Você só precisa arrastar a bolinha cinza até que indique a distância
+          que você acabou de medir no passo anterior.
+        </h3>
+      </Instrucoes>
+
+      <h2>{tamAnel} cm</h2>
+      <input
+        type="range"
+        name="tamanho"
+        min="5"
+        max="7.5"
+        step="0.1"
+        value={tamAnel}
+        onChange={(e) => setTamAnel(e.target.value)}
+      />
+      <h1>{aro}</h1>
+
+      <Footer>
+        <h3>
+          Você já sabe o aro ideal para o seu dedo. Agora venha escolher o anel
+          ideal para deixar sua mão ainda mais linda.
+        </h3>
+        <h2>Você merece!</h2>
+
+        <a
+          href="https://www.prataslovelu.com.br/"
+          target="_blank"
+          rel="noreferrer"
+        >
+          <button>Visitar a loja online da Lovelu</button>
+        </a>
+        <Link to={"/InstrucaoSemAnel"}>
+          <Voltar>Voltar</Voltar>
+        </Link>
+      </Footer>
+    </Container>
+  );
 }
 
 const Container = styled.div`
-    width: 100vw;
-    height: 100vh;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
+  position: fixed;
+  top: 2.5vh;
+  left: 5vw;
+  width: 90vw;
+  height: 95vh;
+
+  div {
     display: flex;
     flex-direction: column;
+    justify-content: center;
+  }
+
+  h1 {
+    height: 100px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
     align-items: center;
-    padding-bottom: 20%;
-    padding-top: 30%;
+    color: rgba(114, 115, 118);
 
-    div {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+    @media (min-width: 1300px) {
+      font-size: 40px;
+      line-height: 80px;
     }
+  }
 
-    h1 {
-        height: 100px;
-        font-size: 50px;
-        text-align: center;
-        display: flex;
-        align-items: center;
+  h2 {
+    font-weight: bold;
+    line-height: 40px;
+    font-size: 20px;
+    color: rgba(114, 115, 118);
+
+    @media (min-width: 1300px) {
+      font-size: 40px;
+      line-height: 80px;
     }
+  }
 
-    h2 {
-        font-weight: bold;
-        line-height: 40px;
-        font-size: 20px;
+  h3 {
+    line-height: 22px;
+    font-size: 16px;
+    margin-bottom: 2vh;
+    color: rgba(114, 115, 118);
+
+    @media (min-width: 1300px) {
+      font-size: 25px;
+      line-height: 50px;
     }
+  }
 
-    h3 {
-        line-height: 22px;
-        font-size: 16px;
-        margin-bottom: 2vh;
-    }
-
-    input {
+  input {
     -webkit-appearance: none;
     appearance: none;
     border-radius: 5px;
-    background-color: #F7EDE4;
+    background: rgba(238, 202, 196);
     outline: none;
     width: 60vw;
     height: 10px;
     margin: 10px 20px;
-    box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.1); 
-    }
+  }
 
-    input::-webkit-slider-thumb {
+  input::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
     width: 25px;
     height: 25px;
-    border-radius: 50%; 
-    box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.1);   
-    background: #A3612F;     
+    border-radius: 50%;
+    background: rgba(114, 115, 118);
     cursor: pointer;
-    }
+  }
 
-    input::-moz-range-thumb {
+  input::-moz-range-thumb {
     width: 25px;
     height: 25px;
-    border-radius: 50%; 
-    box-shadow: 0px 2px 2px 2px rgba(0, 0, 0, 0.1);
-    background: #A3612F;
+    border-radius: 50%;
+    background: rgba(114, 115, 118);
     cursor: pointer;
-    }
-`
+  }
+`;
 
 const Footer = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  bottom: 2vh;
+  width: 90vw;
+  padding: 0 3vh;
+  text-align: center;
+
+  @media (min-width: 1300px) {
+    padding: 0 8vh;
+  }
+
+  button {
+    width: 80vw;
+    height: auto;
+    margin: 20px;
+    padding: 20px;
+    background-color: rgba(114, 115, 118);
+    color: #ffffff;
+    border-radius: 10px;
+    font-size: 18px;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    position: fixed;
-    bottom: 5vh;
+    border: none;
 
-    button {
-        width: 60vw;
-        height: auto;
-        margin: 20px;
-        padding: 20px;
-        background-color: #A3612F;
-        color: #FFFFFF;
-        font-size: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
-    }
-`
+    cursor: pointer;
+  }
+`;
 
 const Voltar = styled.div`
-    display: flex;
-    align-items: center;
-    color: #A3612F;
-    cursor: pointer;
-    font-size: 20px;
-`
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  color: rgba(114, 115, 118, 0.9);
+  cursor: pointer;
+  font-size: 18px;
+  margin-bottom: 3vh;
+`;
 
 const Instrucoes = styled.div`
-    width: 80vw;
-    text-align: left;
-`
+  width: 80vw;
+  text-align: left;
+  color: rgba(114, 115, 118);
+  margin: 3vh 0;
+`;

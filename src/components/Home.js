@@ -1,76 +1,91 @@
-import styled from "styled-components"
-import logo from "../imgs/logo.svg"
+import styled from "styled-components";
 import { Link } from "react-router-dom";
+import logo from "../imgs/logo.png";
 
-export default function Home () {
-    return (
-        <Container>
-            <Topo>
-                <img src={logo} alt="La Luna PratasS"/>
-            </Topo>
+export default function Home() {
+  return (
+    <Container>
+      <img src={logo} alt="LOVELU"></img>
+      <Botoes>
+        {/*         <h1>
+          Olá! Este aplicativo foi feito para te ajudar a descobrir o aro ideal
+          para o seu dedo.
+        </h1> */}
+        <Link to={"/Calibragem"}>
+          <button>Medir com um anel</button>
+        </Link>
 
-            <Botoes>
-                <Link to={"/Calibragem"}>
-                    <button>Tenho um anel para usar de modelo</button>
-                </Link>
-                
-                <Link to={"/InstrucaoSemAnel"}>
-                    <Botao2>Não tenho nenhum anel para modelo</Botao2>
-                </Link>
-            </Botoes>
-        </Container>
-    )
+        <Link to={"/InstrucaoSemAnel"}>
+          <Botao2>Medir com um barbante</Botao2>
+        </Link>
+      </Botoes>
+    </Container>
+  );
 }
 
 const Container = styled.div`
-    width: 100vw;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  position: fixed;
+  top: 15vh;
+  left: 10vw;
+  width: 80vw;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border-radius: 20px;
 
-    button {
-        width: 60vw;
-        height: auto;
-        margin: 15px;
-        padding: 20px;
-        background-color: #A3612F;
-        color: #FFFFFF;
-        font-size: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.1);
+  @media (min-width: 1500px) {
+    flex-direction: inherit;
+  }
+
+  img {
+    width: 60vw;
+    max-width: 500px;
+
+    @media (min-width: 1500px) {
+      max-width: 600px;
     }
-`
-
-const Topo = styled.div`
-    width: 100vw;
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-
-    img {
-        width: 70%;
-        max-width: 300px;
-        height: auto;
-        position: inherit;
-        margin-bottom: 100px;
-    }
-`
+  }
+`;
 
 const Botoes = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+
+  @media (min-width: 1500px) {
+    height: 100%;
+    width: 100%;
+  }
+
+  button {
+    width: 60vw;
+    height: auto;
+    padding: 20px;
+    background-color: rgba(114, 115, 118);
+    color: #ffffff;
+    font-size: 18px;
     display: flex;
-    flex-direction: column;
+    align-items: center;
     justify-content: center;
-    position: fixed;
-    bottom: 20vh;
-`
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+
+    @media (min-width: 1500px) {
+      margin: 0 5%;
+      width: 90%;
+      height: 200px;
+      font-size: 40px;
+    }
+  }
+`;
 
 const Botao2 = styled.button`
-    background-color: #FFFFFF !important;
-    color: #A3612F !important;
-`
+  /* background-color: rgba(238, 202, 196) !important; rosa */
+  color: #ffffff;
+`;
