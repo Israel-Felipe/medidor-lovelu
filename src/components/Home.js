@@ -30,7 +30,7 @@ const Main = styled.div`
 
 const Container = styled.div`
   width: 80vw;
-  height: 500px;
+  height: 70%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,8 +49,8 @@ const Container = styled.div`
   }
 
   img {
-    width: 60vw;
-    max-width: 500px;
+    width: auto;
+    max-height: 200px;
 
     @media (min-width: 1500px) {
       max-width: 600px;
