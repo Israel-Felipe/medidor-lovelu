@@ -99,7 +99,7 @@ export default function Home() {
         >
           <button>Visitar a loja online da Lovelu</button>
         </a>
-        <Link to={"/InstrucaoSemAnel"}>
+        <Link to={"/instrucao-sem-anel"}>
           <Voltar>Voltar</Voltar>
         </Link>
       </Footer>

@@ -114,7 +114,7 @@ export default function Home() {
         >
           <button>Ir para o site</button>
         </a>
-        <Link to={"/Calibragem"}>
+        <Link to={"/calibragem"}>
           <Voltar>Voltar</Voltar>
         </Link>
       </Botoes>

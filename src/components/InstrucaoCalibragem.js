@@ -1,30 +1,27 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { useContext } from "react";
-import UserContext from "../context/UserContext";
-import arraste from "../imgs/arraste.png";
+import calibragem from "../imgs/calibragem.png";
 
-export default function Calibragem() {
-  const { tamCartao, setTamCartao } = useContext(UserContext);
+export default function InstrucaoCalibragem() {
   return (
     <Container>
-      <Cartao largura={`${tamCartao}px`}></Cartao>
+      <Instrucoes>
+        <h2>Instrução: </h2>
+        <h3>
+          Para que possamos ter maior precisão na medição do aro, primeiro
+          precisamos calibrar o medidor. Para isso, você deve colocar um cartão
+          bancário sobre a tela e arrastar a bolinha cinza até que a figura
+          fique da mesma altura que o cartão (como mostra a imagem):
+        </h3>
+      </Instrucoes>
+
+      <img src={calibragem} alt="calibragem" />
 
       <Botoes>
-        <img src={arraste}></img>
-        <input
-          type="range"
-          name="tamanho"
-          min="100"
-          max="350"
-          step="1"
-          value={tamCartao}
-          onChange={(e) => setTamCartao(e.target.value)}
-        />
-        <Link to={"/medicao-com-anel"}>
-          <button>Pronto, já calibrei!</button>
+        <Link to={"/calibragem"}>
+          <button>Entendi, vamos calibrar!</button>
         </Link>
-        <Link to={"/instrucao-calibragem"}>
+        <Link to={"/"}>
           <Voltar>Voltar</Voltar>
         </Link>
       </Botoes>
@@ -61,6 +58,17 @@ const Container = styled.div`
     justify-content: center;
   }
 
+  img {
+    width: 90%;
+    border-radius: 10px;
+
+    @media (min-width: 1300px) {
+      max-width: 600px;
+      height: auto;
+      margin: 100px;
+    }
+  }
+
   h2 {
     font-weight: bold;
     line-height: 40px;
@@ -83,13 +91,58 @@ const Container = styled.div`
   }
 `;
 
+const Instrucoes = styled.div`
+  width: 80vw;
+  text-align: left;
+  color: rgba(114, 115, 118);
+  margin: 3vh 0;
+
+  @media (min-width: 1300px) {
+    margin: 3%;
+  }
+`;
+
+const Ajuste = styled.div`
+  width: 90%;
+  height: auto;
+  max-height: 50vh;
+  margin-bottom: 3vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+`;
+
 const Cartao = styled.div`
-  margin-top: 10%;
-  width: 90vw;
+  width: 0vw;
   height: ${(props) => props.largura};
-  border-top: 5px solid rgba(114, 115, 118);
-  border-bottom: 5px solid rgba(114, 115, 118);
-  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  background-color: rgb(238, 202, 196);
+  position: fixed;
+  top: 25%;
+  left: -10%;
+
+  @media (min-width: 550px) {
+    width: auto;
+    left: 15vw;
+    top: 20%;
+  }
+
+  @media (min-width: 1000px) {
+    left: 25vw;
+  }
+
+  @media (min-width: 1300px) {
+    width: auto;
+    left: 55vw;
+  }
+  img {
+    height: 100%;
+    width: 100vw;
+
+    @media (min-width: 550px) {
+      width: auto;
+    }
+  }
 `;
 
 const Botoes = styled.div`
@@ -144,12 +197,6 @@ const Botoes = styled.div`
     border: none;
 
     cursor: pointer;
-  }
-
-  img {
-    width: 150px;
-    margin-left: -50vw;
-    margin-bottom: -40px;
   }
 `;
 

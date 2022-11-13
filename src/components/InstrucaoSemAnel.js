@@ -18,7 +18,7 @@ export default function Calibragem() {
       </Instrucoes>
 
       <Botoes>
-        <Link to={"/MedicaoSemAnel"}>
+        <Link to={"/medicao-sem-anel"}>
           <button>Próximo passo</button>
         </Link>
         <Link to={"/"}>

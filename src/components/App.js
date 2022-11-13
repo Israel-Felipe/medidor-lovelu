@@ -5,16 +5,16 @@ import UserContext from "../context/UserContext";
 import { useState } from "react";
 
 import Home from "./Home";
+import InstrucaoCalibragem from "./InstrucaoCalibragem";
 import Calibragem from "./Calibragem";
 import ComAnel from "./ComAnel";
-
 import InstrucaoSemAnel from "./InstrucaoSemAnel";
 import SemAnel from "./SemAnel";
 
 import wallpaper from "../imgs/wallpaper.png";
 
 export default function App() {
-  const [tamCartao, setTamCartao] = useState("250");
+  const [tamCartao, setTamCartao] = useState("100");
   const umCm = tamCartao / 5.4;
 
   return (
@@ -25,11 +25,15 @@ export default function App() {
         <UserContext.Provider value={{ tamCartao, setTamCartao, umCm }}>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route
+              path="/instrucao-calibragem"
+              element={<InstrucaoCalibragem />}
+            />
             <Route path="/calibragem" element={<Calibragem />} />
-            <Route path="/MedicaoComAnel" element={<ComAnel />} />
+            <Route path="/medicao-com-anel" element={<ComAnel />} />
 
-            <Route path="/InstrucaoSemAnel" element={<InstrucaoSemAnel />} />
-            <Route path="/MedicaoSemAnel" element={<SemAnel />} />
+            <Route path="/instrucao-sem-anel" element={<InstrucaoSemAnel />} />
+            <Route path="/medicao-sem-anel" element={<SemAnel />} />
           </Routes>
         </UserContext.Provider>
       </BrowserRouter>

@@ -7,15 +7,11 @@ export default function Home() {
     <Container>
       <img src={logo} alt="LOVELU"></img>
       <Botoes>
-        {/*         <h1>
-          Olá! Este aplicativo foi feito para te ajudar a descobrir o aro ideal
-          para o seu dedo.
-        </h1> */}
-        <Link to={"/Calibragem"}>
+        <Link to={"/instrucao-calibragem"}>
           <button>Medir com um anel</button>
         </Link>
 
-        <Link to={"/InstrucaoSemAnel"}>
+        <Link to={"/instrucao-sem-anel"}>
           <Botao2>Medir com um barbante</Botao2>
         </Link>
       </Botoes>
