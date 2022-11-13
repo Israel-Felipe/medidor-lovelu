@@ -30,7 +30,7 @@ const Main = styled.div`
 
 const Container = styled.div`
   width: 80vw;
-  height: 70%;
+  height: 600px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,16 +43,21 @@ const Container = styled.div`
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
 
-  @media (min-width: 1500px) {
+  @media (min-width: 500px) {
+    height: 70vh;
+  }
+
+  @media (min-width: 1000px) {
     flex-direction: inherit;
-    height: 900px;
+    height: 70vh;
   }
 
   img {
-    width: auto;
-    max-height: 200px;
+    width: 60vw;
+    max-width: 500px;
+    max-height: 40vh;
 
-    @media (min-width: 1500px) {
+    @media (min-width: 1000px) {
       max-width: 600px;
     }
   }
@@ -64,7 +69,7 @@ const Botoes = styled.div`
   justify-content: center;
   gap: 15px;
 
-  @media (min-width: 1500px) {
+  @media (min-width: 1000px) {
     height: 100%;
     width: 100%;
   }
@@ -83,10 +88,10 @@ const Botoes = styled.div`
     border-radius: 10px;
     cursor: pointer;
 
-    @media (min-width: 1500px) {
+    @media (min-width: 1000px) {
       margin: 0 5%;
       width: 90%;
-      height: 200px;
+      height: 20vh;
       font-size: 40px;
     }
   }
