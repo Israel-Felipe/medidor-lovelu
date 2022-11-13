@@ -4,27 +4,33 @@ import logo from "../imgs/logo.png";
 
 export default function Home() {
   return (
-    <Container>
-      <img src={logo} alt="LOVELU"></img>
-      <Botoes>
-        <Link to={"/instrucao-calibragem"}>
-          <button>Medir com um anel</button>
-        </Link>
+    <Main>
+      <Container>
+        <img src={logo} alt="LOVELU"></img>
+        <Botoes>
+          <Link to={"/instrucao-calibragem"}>
+            <button>Medir com um anel</button>
+          </Link>
 
-        <Link to={"/instrucao-sem-anel"}>
-          <Botao2>Medir com um barbante</Botao2>
-        </Link>
-      </Botoes>
-    </Container>
+          <Link to={"/instrucao-sem-anel"}>
+            <Botao2>Medir com um barbante</Botao2>
+          </Link>
+        </Botoes>
+      </Container>
+    </Main>
   );
 }
 
+const Main = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+`;
+
 const Container = styled.div`
-  position: fixed;
-  top: 15vh;
-  left: 10vw;
   width: 80vw;
-  height: 70vh;
+  height: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -39,6 +45,7 @@ const Container = styled.div`
 
   @media (min-width: 1500px) {
     flex-direction: inherit;
+    height: 900px;
   }
 
   img {
