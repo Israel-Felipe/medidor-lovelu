@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 import gif from "../imgs/medir-com-barbante.gif";
 
-import { Main } from "./GlobalStyled.js";
+import { Main, Container, Botoes, Voltar } from "./GlobalStyled.js";
 
 export default function Calibragem() {
   return (
@@ -32,53 +32,6 @@ export default function Calibragem() {
     </Main>
   );
 }
-const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 90vw;
-  height: 700px;
-  background: rgba(255, 255, 255, 0.35);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(13.5px);
-  -webkit-backdrop-filter: blur(13.5px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  position: relative;
-
-  @media (min-width: 1000px) {
-    flex-direction: initial;
-    justify-content: center;
-    height: 90vh;
-  }
-
-  div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  h2 {
-    font-weight: bold;
-    line-height: 40px;
-    font-size: 20px;
-
-    @media (min-width: 1300px) {
-      font-size: 70px;
-      line-height: 150px;
-    }
-  }
-
-  h3 {
-    line-height: 22px;
-    font-size: 16px;
-
-    @media (min-width: 1300px) {
-      font-size: 40px;
-      line-height: 60px;
-    }
-  }
-`;
 
 const ImgGif = styled.div`
   width: 80vw;
@@ -103,40 +56,6 @@ const ImgGif = styled.div`
       width: 600px;
     }
   }
-`;
-
-const Botoes = styled.div`
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: absolute;
-  bottom: 10px;
-
-  button {
-    width: 80vw;
-    height: auto;
-    margin: 20px;
-    padding: 20px;
-    background-color: rgba(114, 115, 118);
-    color: #ffffff;
-    border-radius: 10px;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-
-    cursor: pointer;
-  }
-`;
-
-const Voltar = styled.div`
-  display: flex;
-  align-items: center;
-  color: rgba(114, 115, 118, 0.9);
-  cursor: pointer;
-  font-size: 18px;
-  margin-bottom: 3vh;
 `;
 
 const Instrucoes = styled.div`

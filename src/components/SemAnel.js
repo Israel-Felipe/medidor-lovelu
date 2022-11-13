@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
+import { Main, Voltar } from "./GlobalStyled.js";
+
 export default function Home() {
   const [tamAnel, setTamAnel] = useState(5);
 
@@ -64,66 +66,68 @@ export default function Home() {
   }, [tamAnel]);
 
   return (
-    <Container>
-      <Instrucoes>
-        <h2>Agora é fácil...</h2>
-        <h3>
-          Você só precisa arrastar a bolinha cinza até que indique a distância
-          que você acabou de medir no passo anterior.
-        </h3>
-      </Instrucoes>
+    <Main>
+      <Container>
+        <Instrucoes>
+          <h2>Agora é fácil...</h2>
+          <h3>
+            Você só precisa arrastar a bolinha cinza até que indique a distância
+            que você acabou de medir no passo anterior.
+          </h3>
+        </Instrucoes>
 
-      <h2>{tamAnel} cm</h2>
-      <input
-        type="range"
-        name="tamanho"
-        min="5"
-        max="7.5"
-        step="0.1"
-        value={tamAnel}
-        onChange={(e) => setTamAnel(e.target.value)}
-      />
-      <h1>{aro}</h1>
+        <h2>{tamAnel} cm</h2>
+        <input
+          type="range"
+          name="tamanho"
+          min="5"
+          max="7.5"
+          step="0.1"
+          value={tamAnel}
+          onChange={(e) => setTamAnel(e.target.value)}
+        />
+        <h1>{aro}</h1>
 
-      <Footer>
-        <h3>
-          Você já sabe o aro ideal para o seu dedo. Agora venha escolher o anel
-          ideal para deixar sua mão ainda mais linda.
-        </h3>
-        <h2>Você merece!</h2>
+        <Footer>
+          <h3>
+            Você já sabe o aro ideal para o seu dedo. Agora venha escolher o
+            anel ideal para deixar sua mão ainda mais linda.
+          </h3>
+          <h2>Você merece!</h2>
 
-        <a
-          href="https://www.prataslovelu.com.br/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <button>Visitar a loja online da Lovelu</button>
-        </a>
-        <Link to={"/instrucao-sem-anel"}>
-          <Voltar>Voltar</Voltar>
-        </Link>
-      </Footer>
-    </Container>
+          <a
+            href="https://www.prataslovelu.com.br/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <button>Visitar a loja online da Lovelu</button>
+          </a>
+          <Link to={"/instrucao-sem-anel"}>
+            <Voltar>Voltar</Voltar>
+          </Link>
+        </Footer>
+      </Container>
+    </Main>
   );
 }
 
-const Container = styled.div`
-  width: 100vw;
-  height: 100vh;
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: fixed;
-  top: 2.5vh;
-  left: 5vw;
   width: 90vw;
-  height: 95vh;
+  height: 700px;
   background: rgba(255, 255, 255, 0.35);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(13.5px);
   -webkit-backdrop-filter: blur(13.5px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
+  position: relative;
+
+  @media (min-width: 1000px) {
+    height: 90vh;
+  }
 
   div {
     display: flex;
@@ -205,14 +209,14 @@ const Footer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  position: fixed;
-  bottom: 2vh;
   width: 90vw;
-  padding: 0 3vh;
+  padding: 0 3%;
   text-align: center;
+  position: absolute;
+  bottom: 10px;
 
   @media (min-width: 1300px) {
-    padding: 0 8vh;
+    padding: 0 10%;
   }
 
   button {
@@ -231,16 +235,6 @@ const Footer = styled.div`
 
     cursor: pointer;
   }
-`;
-
-const Voltar = styled.div`
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  color: rgba(114, 115, 118, 0.9);
-  cursor: pointer;
-  font-size: 18px;
-  margin-bottom: 3vh;
 `;
 
 const Instrucoes = styled.div`
