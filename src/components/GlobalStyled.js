@@ -5,7 +5,7 @@ export const Main = styled.div`
   justify-content: center;
   align-items: center;
   height: 100%;
-  padding: 20px 0;
+  padding: 35px 0;
 
   @media (min-width: 1000px) {
     height: 100vh;
@@ -30,6 +30,25 @@ export const Container = styled.div`
     flex-direction: initial;
     justify-content: center;
     height: 90vh;
+  }
+
+  img {
+    width: 80vw;
+    border-radius: 10px;
+
+    @media (min-width: 500px) {
+      max-width: 350px;
+      height: auto;
+    }
+
+    @media (min-width: 1000px) {
+      margin: -100px 100px 50px 0;
+    }
+
+    @media (min-width: 1300px) {
+      max-width: 500px;
+      height: auto;
+    }
   }
 
   div {

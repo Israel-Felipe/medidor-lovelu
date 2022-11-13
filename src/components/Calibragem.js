@@ -4,92 +4,46 @@ import { useContext } from "react";
 import UserContext from "../context/UserContext";
 import arraste from "../imgs/arraste.png";
 
+import { Main, Container, Voltar } from "./GlobalStyled.js";
+
 export default function Calibragem() {
   const { tamCartao, setTamCartao } = useContext(UserContext);
   return (
-    <Container>
-      <Cartao largura={`${tamCartao}px`}></Cartao>
+    <Main>
+      <Container>
+        <Cartao largura={`${tamCartao}px`}></Cartao>
 
-      <Botoes>
-        <img src={arraste}></img>
-        <input
-          type="range"
-          name="tamanho"
-          min="100"
-          max="350"
-          step="1"
-          value={tamCartao}
-          onChange={(e) => setTamCartao(e.target.value)}
-        />
-        <Link to={"/medicao-com-anel"}>
-          <button>Pronto, já calibrei!</button>
-        </Link>
-        <Link to={"/instrucao-calibragem"}>
-          <Voltar>Voltar</Voltar>
-        </Link>
-      </Botoes>
-    </Container>
+        <Botoes>
+          <img src={arraste}></img>
+          <input
+            type="range"
+            name="tamanho"
+            min="100"
+            max="350"
+            step="1"
+            value={tamCartao}
+            onChange={(e) => setTamCartao(e.target.value)}
+          />
+          <Link to={"/medicao-com-anel"}>
+            <button>Pronto, já calibrei!</button>
+          </Link>
+          <Link to={"/instrucao-calibragem"}>
+            <Voltar>Voltar</Voltar>
+          </Link>
+        </Botoes>
+      </Container>
+    </Main>
   );
 }
 
-const Container = styled.div`
-  width: 100vw;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  position: fixed;
-  top: 2.5vh;
-  left: 5vw;
-  width: 90vw;
-  height: 95vh;
-  background: rgba(255, 255, 255, 0.35);
-  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-  backdrop-filter: blur(13.5px);
-  -webkit-backdrop-filter: blur(13.5px);
-  border-radius: 10px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
-
-  @media (min-width: 1300px) {
-    flex-direction: initial;
-    justify-content: center;
-    align-items: flex-start;
-  }
-
-  div {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
-  h2 {
-    font-weight: bold;
-    line-height: 40px;
-    font-size: 20px;
-
-    @media (min-width: 1300px) {
-      font-size: 70px;
-      line-height: 150px;
-    }
-  }
-
-  h3 {
-    line-height: 22px;
-    font-size: 16px;
-
-    @media (min-width: 1300px) {
-      font-size: 40px;
-      line-height: 60px;
-    }
-  }
-`;
-
 const Cartao = styled.div`
-  margin-top: 10%;
   width: 90vw;
   height: ${(props) => props.largura};
   border-top: 5px solid rgba(114, 115, 118);
   border-bottom: 5px solid rgba(114, 115, 118);
   background-color: rgba(255, 255, 255, 0.5);
+  position: absolute;
+  top: 50px;
 `;
 
 const Botoes = styled.div`
@@ -97,8 +51,8 @@ const Botoes = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  position: fixed;
-  bottom: 2vh;
+  position: absolute;
+  bottom: 10px;
 
   input {
     -webkit-appearance: none;
@@ -151,13 +105,4 @@ const Botoes = styled.div`
     margin-left: -50vw;
     margin-bottom: -40px;
   }
-`;
-
-const Voltar = styled.div`
-  display: flex;
-  align-items: center;
-  color: rgba(114, 115, 118, 0.9);
-  cursor: pointer;
-  font-size: 18px;
-  margin-bottom: 3vh;
 `;
