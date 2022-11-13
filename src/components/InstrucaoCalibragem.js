@@ -8,7 +8,7 @@ export default function InstrucaoCalibragem() {
     <Main>
       <Container>
         <Instrucoes>
-          <h2>Instrução: </h2>
+          <h2>IMPORTANTE: </h2>
           <h3>
             Para que possamos ter maior precisão na medição do aro, primeiro
             precisamos calibrar o medidor. Para isso, você deve colocar um

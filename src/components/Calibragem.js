@@ -43,7 +43,7 @@ const Cartao = styled.div`
   border-bottom: 5px solid rgba(114, 115, 118);
   background-color: rgba(255, 255, 255, 0.5);
   position: absolute;
-  top: 50px;
+  top: 100px;
 `;
 
 const Botoes = styled.div`

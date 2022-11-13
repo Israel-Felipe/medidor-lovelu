@@ -4,6 +4,8 @@ import UserContext from "../context/UserContext";
 import { Link } from "react-router-dom";
 import logo from "../imgs/logo.png";
 
+import { Main, Botoes, Voltar } from "./GlobalStyled.js";
+
 export default function Home() {
   const { umCm } = useContext(UserContext);
 
@@ -74,77 +76,76 @@ export default function Home() {
   }, [tamAnelCm]);
 
   return (
-    <Container>
-      <Instrucoes>
-        <h2>Instrução:</h2>
-        <h3>
-          Coloque o seu anel em cima da figura e ajuste até que fiquem do mesmo
-          tamanho.
-        </h3>
-        <h4>
-          Caso o seu anel for anatômico, considere um número a menos do aro.
-        </h4>
-      </Instrucoes>
+    <Main>
+      <Container>
+        <Instrucoes>
+          <h2>Instrução:</h2>
+          <h3>
+            Coloque o seu anel em cima da figura e ajuste até que fiquem do
+            mesmo tamanho.
+          </h3>
+          <h4>
+            Caso o seu anel for anatômico, considere um número a menos do aro.
+          </h4>
+        </Instrucoes>
 
-      <Cont2>
-        <BoxTamanho>
-          <CirculoMaior>
-            <Circulo tamAnel={`${tamAnel}px`}>
-              <img src={logo} alt="anel"></img>
-            </Circulo>
-          </CirculoMaior>
-        </BoxTamanho>
+        <Cont2>
+          <BoxTamanho>
+            <CirculoMaior>
+              <Circulo tamAnel={`${tamAnel}px`}>
+                <img src={logo} alt="anel"></img>
+              </Circulo>
+            </CirculoMaior>
+          </BoxTamanho>
 
-        <h6>{aro}</h6>
-      </Cont2>
-      <Botoes>
-        <input
-          type="range"
-          name="tamanho"
-          min="50"
-          max="200"
-          step="0.5"
-          value={tamAnel}
-          onChange={(e) => setTamAnel(e.target.value)}
-        />
-        <a
-          href="https://www.prataslovelu.com.br/"
-          target="_blank"
-          rel="noreferrer"
-        >
-          <button>Ir para o site</button>
-        </a>
-        <Link to={"/calibragem"}>
-          <Voltar>Voltar</Voltar>
-        </Link>
-      </Botoes>
-    </Container>
+          <h6>{aro}</h6>
+        </Cont2>
+        <Botoes>
+          <input
+            type="range"
+            name="tamanho"
+            min="50"
+            max="200"
+            step="0.5"
+            value={tamAnel}
+            onChange={(e) => setTamAnel(e.target.value)}
+          />
+          <a
+            href="https://www.prataslovelu.com.br/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <button>Ir para o site</button>
+          </a>
+          <Link to={"/calibragem"}>
+            <Voltar>Voltar</Voltar>
+          </Link>
+        </Botoes>
+      </Container>
+    </Main>
   );
 }
 
-const Container = styled.div`
-  width: 100vw;
-  height: 100vh;
+export const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  position: fixed;
-  top: 2.5vh;
-  left: 5vw;
   width: 90vw;
-  height: 95vh;
-  color: rgba(114, 115, 118);
+  height: 700px;
   background: rgba(255, 255, 255, 0.35);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(13.5px);
   -webkit-backdrop-filter: blur(13.5px);
   border-radius: 10px;
   border: 1px solid rgba(255, 255, 255, 0.18);
+  position: relative;
+  color: rgba(114, 115, 118);
 
   @media (min-width: 1300px) {
     flex-direction: initial;
     justify-content: center;
     align-items: flex-start;
+    height: 90vh;
   }
 
   div {
@@ -272,40 +273,4 @@ const Cont2 = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-`;
-
-const Botoes = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  position: fixed;
-  bottom: 2vh;
-
-  button {
-    width: 80vw;
-    height: auto;
-    margin: 20px;
-    padding: 20px;
-    background-color: rgba(114, 115, 118);
-    color: #ffffff;
-    border-radius: 10px;
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: none;
-
-    cursor: pointer;
-  }
-`;
-
-const Voltar = styled.div`
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  color: rgba(114, 115, 118, 0.9);
-  cursor: pointer;
-  font-size: 18px;
-  margin-bottom: 3vh;
 `;
