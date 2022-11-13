@@ -30,7 +30,7 @@ const Main = styled.div`
 
 const Container = styled.div`
   width: 80vw;
-  height: 600px;
+  height: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
