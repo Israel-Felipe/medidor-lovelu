@@ -111,7 +111,7 @@ export default function Home() {
             onChange={(e) => setTamAnel(e.target.value)}
           />
           <a
-            href="https://www.prataslovelu.com.br/"
+            href="https://www.prataslovelu.com.br/aneis"
             target="_blank"
             rel="noreferrer"
           >

@@ -96,7 +96,7 @@ export default function Home() {
           <h2>Você merece!</h2>
 
           <a
-            href="https://www.prataslovelu.com.br/"
+            href="https://www.prataslovelu.com.br/aneis"
             target="_blank"
             rel="noreferrer"
           >
