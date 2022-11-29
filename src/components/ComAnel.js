@@ -131,7 +131,7 @@ export const Container = styled.div`
   flex-direction: column;
   align-items: center;
   width: 90vw;
-  height: 700px;
+  height: 750px;
   background: rgba(255, 255, 255, 0.35);
   box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
   backdrop-filter: blur(13.5px);

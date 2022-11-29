@@ -17,6 +17,11 @@ export default function Home() {
           </Link>
         </Botoes>
       </Container>
+      <Dev>
+        <a href="https://linktr.ee/israel.felipe" target="blank">
+          <h1>Desenvolvido por: Israel Felipe</h1>
+        </a>
+      </Dev>
     </Main>
   );
 }
@@ -30,7 +35,7 @@ const Main = styled.div`
 
 const Container = styled.div`
   width: 80vw;
-  height: 450px;
+  height: 500px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -100,4 +105,19 @@ const Botoes = styled.div`
 const Botao2 = styled.button`
   /* background-color: rgba(238, 202, 196) !important; rosa */
   color: #ffffff;
+`;
+
+const Dev = styled.h1`
+  position: fixed;
+  bottom: 2vh;
+  color: red;
+
+  h1 {
+    color: rgba(114, 115, 118);
+    cursor: pointer;
+
+    @media (min-width: 1000px) {
+      font-size: 20px;
+    }
+  }
 `;
